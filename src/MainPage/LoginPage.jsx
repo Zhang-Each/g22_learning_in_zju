@@ -29,6 +29,10 @@ export default class LoginPage extends React.Component {
         this.touristVisit = this.touristVisit.bind(this);
     }
 
+    /**
+     * 下面这两个函数的代码是我之前写的脑瘫型登陆验证，建议重写，真的垃圾，我吐了
+     * @param values
+     */
     handleSubmit(values) {
         this.setState({
             userName: values.username,
@@ -57,6 +61,7 @@ export default class LoginPage extends React.Component {
         };
         console.log(path)
         alert("以游客身份访问学在浙大！");
+        // 本来我想通过push的方式直接发送信息，不过存在问题
         this.props.history.push(path);
     }
 
@@ -98,6 +103,11 @@ export default class LoginPage extends React.Component {
     }
 };
 
+/**
+ * 这段代码暂时没用了，别看了
+ * @param name
+ * @returns {string}
+ */
 function checkLoginKind(name) {
     switch (name) {
         case "admin": return "1";
