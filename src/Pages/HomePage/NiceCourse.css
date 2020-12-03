@@ -91,17 +91,19 @@
 }
 
 .courseTime{
-    font-size: 12px;
+    font-size: 13px;
     line-height: 16px;
     margin: 10px 0;
     color: #999;
 }
 
 .courseTeacher{
+    font-size:15px;
     color: #999;
 }
 
 .courseType{
+    font-size:15px;
     color: #24b675;
     float: right;
 }

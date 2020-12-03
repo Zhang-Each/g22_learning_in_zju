@@ -18,11 +18,11 @@ export default class MainPage extends React.Component {
                         <div class="sectionBox">
                             <img src={img1} />
                             <div class="sectionMsg">
-                                <p class="courseTitle">计算机系统原理</p>
+                                <p class="courseTitle">非常天空开发实践</p>
                                 <p class="courseTime">开课时间: <span class="startTime">2020-09-07</span> </p>
                                 <p>
                                     <span class="courseTeacher">楼学庆</span>
-                                    <span class="courseType">通识课程</span>
+                                    <span class="courseType">实训课程</span>
                                 </p>
                             </div>
                         </div>
@@ -32,7 +32,7 @@ export default class MainPage extends React.Component {
                         <div class="sectionBox">
                             <img src={img2} />
                             <div class="sectionMsg">
-                                <p class="courseTitle">中文编程技术</p>
+                                <p class="courseTitle">作业批改技巧导论</p>
                                 <p class="courseTime">开课时间: <span class="startTime">2020-09-07</span> </p>
                                 <p>
                                     <span class="courseTeacher">楼学庆</span>
@@ -46,11 +46,11 @@ export default class MainPage extends React.Component {
                         <div class="sectionBox">
                             <img src={img3} />
                             <div class="sectionMsg">
-                                <p class="courseTitle">狗肉学研究</p>
+                                <p class="courseTitle">五天五夜写代码实训</p>
                                 <p class="courseTime">开课时间: <span class="startTime">2020-09-07</span> </p>
                                 <p>
-                                    <span class="courseTeacher">楼学庆</span>
-                                    <span class="courseType">通识课程</span>
+                                    <span class="courseTeacher">金波</span>
+                                    <span class="courseType">实训课程</span>
                                 </p>
                             </div>
                         </div>
@@ -60,11 +60,11 @@ export default class MainPage extends React.Component {
                         <div class="sectionBox">
                             <img src={img4} />
                             <div class="sectionMsg">
-                                <p class="courseTitle">楼sir音乐课</p>
+                                <p class="courseTitle">闪电五连鞭</p>
                                 <p class="courseTime">开课时间: <span class="startTime">2020-09-07</span> </p>
                                 <p>
-                                    <span class="courseTeacher">楼学庆</span>
-                                    <span class="courseType">通识课程</span>
+                                    <span class="courseTeacher">马保国、楼学庆</span>
+                                    <span class="courseType">体育课程</span>
                                 </p>
                             </div>
                         </div>
@@ -74,11 +74,11 @@ export default class MainPage extends React.Component {
                         <div class="sectionBox">
                             <img src={img5} />
                             <div class="sectionMsg">
-                                <p class="courseTitle">非常天空开发实践</p>
+                                <p class="courseTitle">演讲与口才</p>
                                 <p class="courseTime">开课时间: <span class="startTime">2020-09-07</span> </p>
                                 <p>
-                                    <span class="courseTeacher">楼学庆</span>
-                                    <span class="courseType">通识课程</span>
+                                    <span class="courseTeacher">邢卫</span>
+                                    <span class="courseType">专业课程</span>
                                 </p>
                             </div>
                         </div>
@@ -88,11 +88,11 @@ export default class MainPage extends React.Component {
                         <div class="sectionBox">
                             <img src={img6} />
                             <div class="sectionMsg">
-                                <p class="courseTitle">作业批改技巧导论</p>
-                                <p class="courseTime">开课时间: <span class="startTime">2020-09-07</span> </p>
+                                <p class="courseTitle">计算机原理之西湖联欢会</p>
+                                <p class="courseTime">开课时间: <span class="startTime">2020-12-14</span> </p>
                                 <p>
                                     <span class="courseTeacher">楼学庆</span>
-                                    <span class="courseType">通识课程</span>
+                                    <span class="courseType">实践课程</span>
                                 </p>
                             </div>
                         </div>
