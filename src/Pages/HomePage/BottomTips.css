@@ -1,0 +1,103 @@
+.myfoot {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 280px;
+    border-top: 1px solid #272727;
+    background-color: #272727;
+    padding: 30px 0 35px 0;
+    line-height: 20px;
+}
+
+.foot1 {
+    zoom: 1;
+    width: 100%;
+    height:130px;
+    margin-top: 20px;
+}
+
+.fBlock1 {
+    width:35%;
+    float:left;
+    padding-left:150px;
+    margin-right:1px;
+}
+
+.fLogo {
+    width: 100%;
+    height: 37px;
+    background: url(./images/logo.jpg) no-repeat 0 0;
+    background-size: contain;
+}
+
+.fContent {
+    margin-top: 20px;
+    color: #999;
+}
+
+.fBlock2 {
+    width:26%;
+    float: right;
+    position: relative;
+}
+
+.fBlock2 .img1, .img2{
+    height:75px;
+    width:15%;
+    vertical-align:middle;
+}
+
+.img1{
+    margin-right: 15px;
+}
+
+.img2{
+    margin-left: 15px; 
+}
+
+.fBlock3 {
+    position: relative;
+    float:right;
+    width: 29%;
+    margin-right: 50px;
+}
+
+.aboutUs {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #ccc;
+    margin-top: 0;
+    font-weight: 500;
+}
+
+.friendLink {
+    zoom: 1;
+}
+
+.friendLink a{
+    display: inline-block;
+    width: 45%;
+    height: 25px;
+    color: #999;
+}
+
+.friendLink a:hover{
+    color: #00c758;
+}
+
+.foot2{
+    margin-top:25px;
+    zoom: 1;
+    width: 100%;
+}
+
+.foot2Content p{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    text-align: center;
+    color: #666;
+}
+
