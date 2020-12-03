@@ -1,0 +1,43 @@
+.helpTitle {
+    margin: 60px 210px 40px 120px;
+    padding:20px 50px 30px 40px;
+    background: #fff;
+    border-radius: 10px;
+    min-width: 1160px;
+}
+
+.helpTitle:hover {
+    box-shadow: 0 0 5px 3px #CCC;
+}
+
+.helpTitle h2 {
+    width:100%;
+    font-weight:400;
+    font-size:32px;
+    text-align:center;
+    line-height:2;
+}
+
+.pubInfo{
+    width:100%;
+    font-size:16px;
+    text-align:center;
+    line-height:1.4;
+}
+
+.pubContent p{
+    font-size:17px;
+    line-height:1.2;
+}
+
+.pubContent h4{
+    font-size:18px;
+    line-height:1.42;
+    color:blue;
+}
+
+.pubContent img {
+    width:60%;
+    vertical-align: middle;
+}
+
