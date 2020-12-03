@@ -1,6 +1,6 @@
 import React from "react";
 import {Form, Input, Button, Checkbox} from "antd";
-
+import axios from "axios";
 import 'antd/dist/antd.css';
 
 const layout = {
@@ -21,6 +21,7 @@ const titleStyle = {
 export default class LoginPage extends React.Component {
     constructor(props) {
         super(props)
+        this.test = "databinding";
         this.state = {
             userName: null,
             password: null
@@ -34,11 +35,39 @@ export default class LoginPage extends React.Component {
      * @param values
      */
     handleSubmit(values) {
-        this.setState({
-            userName: values.username,
-            password: values.password
-        });
-        this.checkLogin();
+        let loginData = {
+            "name": values.username,
+            "password": values.password
+        };
+        axios.post('http://127.0.0.1:8000/login/',loginData).then(res=>{
+            //console.log('res=>',res);
+            if(res.data.login === true){
+                //登录成功后设置cookie，然后跳转，检查登录时要使用cookie中的session_id，到后台进行验证
+                document.cookie="session_id="+res.data.session_id;  
+                let path = {
+                    pathname: '/main'
+                };
+                this.props.history.push(path);
+               
+               /*
+               var getCookie = function(name) 
+                { 
+                        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+                        if(arr=document.cookie.match(reg)) 
+                            return unescape(arr[2]); 
+                        else return null; 
+                } 
+               var url = 'http://127.0.0.1:8000/session/?session_id=' + getCookie('session_id')
+               axios.get(url).then(res=>{
+                    console.log(res.data);
+               })
+               */
+            }else if(res.data.id_not_exist === true){  //用户名不存在
+                alert("您输入的学工号不存在，请检查后重新输入");
+            }else if(res.data.wrong_password === true){  //密码错误
+                alert("密码错误，请重试");
+            }
+        })
     }
 
     checkLogin() {
@@ -74,15 +103,20 @@ export default class LoginPage extends React.Component {
                       onFinish={this.handleSubmit}
                       style={{margin: "center"}}>
 
-                    <Form.Item label={"用户名"} name={"username"}
-                               rules={[{ required: true, message: 'Please input your username!' }]}
+                    <Form.Item label={"学工号"} name={"username"}
+                               rules={[
+                                   { required: true,  message: '学工号不能为空' },
+                                   {pattern: /[0-9]{6,}/,   message: '学工号为至少六位的纯数字'}
+                                ]
+                            }
                     style={{alignSelf: "center"}}>
-                        <Input value={this.state.username} onChange={this.handleChange}/>
+                        <Input value={this.state.username} placeholder="输入学工号"/>
                     </Form.Item>
 
                     <Form.Item label={"密码"} name={"password"}
-                               rules={[{required:true, message:'Please input your password!'}]}>
-                        <Input.Password />
+                               rules={[{required:true,  message:'密码不能为空'},
+                            {pattern: /^.{1,16}$/,   message: '密码长度为1-16位'}]}>
+                        <Input.Password placeholder="输入密码"/>
                     </Form.Item>
 
                     <Form.Item {...tailLayout} name={"remember"} valuePropName={"checked"}>
@@ -90,8 +124,8 @@ export default class LoginPage extends React.Component {
                     </Form.Item>
 
                     <Form.Item {...tailLayout}>
-                        <Button type={"primary"} htmlType={"submit"} style={{margin: '0 16px',}}>
-                            提交
+                        <Button type={"primary"} htmlType={"submit"} style={{margin: '0 16px',}} handleClick={"this.handleSubmit"}>
+                            登录
                         </Button>
                         <Button htmlType={"button"} onClick={this.touristVisit}>
                             游客访问
@@ -117,3 +151,4 @@ function checkLoginKind(name) {
         default: return "5";
     }
 }
+
