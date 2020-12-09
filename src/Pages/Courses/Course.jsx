@@ -2,7 +2,8 @@ import React from "react";
 import {Layout, Menu} from "antd";
 import {Route, Switch} from "react-router";
 import { UserOutlined, LaptopOutlined } from '@ant-design/icons';
-
+import CourseMenuList from "./CourseMenuList";
+import CourseSwitch from "./CourseSwitch";
 const {Content, Footer, Sider} = Layout;
 const {SubMenu} = Menu;
 
@@ -26,20 +27,9 @@ export default class Course extends React.Component {
                 </Sider>
 
                 <Layout style={{ padding: '0 24px 24px' }}>
-                    <Content
-                        className="site-layout-background"
-                        style={{
-                            padding: 24,
-                            margin: 0,
-                            minHeight: 300,
-                        }}
-                    >
-                        <h1>课程页面</h1>
-                    </Content>
-
+                    <CourseMenuList/>
+                    <CourseSwitch/>
                 </Layout>
-
-
             </Layout>
         );
     }

@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 
 import HeadTitle from "../component/HeadTitle";
 import MenuList from "../component/MenuList";
+
 import {Route, Switch} from "react-router";
 
 
@@ -13,7 +14,6 @@ import Course from "../Pages/Courses/Course";
 import Message from "../Pages/Message/Message";
 import OpenClass from "../Pages/OpenClass/OpenClass";
 import HelpPage from "../Pages/HelpPage/HelpPage";
-
 
 const { SubMenu } = Menu;
 const { Content, Sider, Footer} = Layout;
@@ -34,12 +34,14 @@ class Navigator extends React.Component {
                 </Layout>
 
                 {/*一级导航菜单 */}
-                <MenuList />
+                <MenuList/>
                 {/*子页面的路由*/}
                 <Switch>
                     <Route exact path={"/main"} component={HomePage} />
                     <Route path={"/main/information"} component={PersonInfo} />
-                    <Route path={"/main/courses"} component={Course} />
+                    <Route path={"/main/courses/student"} component={Course} />
+                    <Route path={"/main/courses/teacher"} component={Course} />
+                    <Route path={"/main/courses/assistant"} component={Course} />
                     <Route path={"/main/message"} component={Message} />
                     <Route path={"/main/openclass"} component={OpenClass} />
                     <Route path={"/main/help"} component={HelpPage} />
