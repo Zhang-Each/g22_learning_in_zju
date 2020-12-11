@@ -2,6 +2,7 @@ import React from "react";
 import {Layout, Menu} from "antd";
 import {Route, Switch} from "react-router";
 import _Course from "../Courses/Course2";
+import StudentHomework from "./StudentHomework";
 import Message from "../Message/Message";
 export default class CourseSwitch extends React.Component{
     render(){
@@ -9,7 +10,7 @@ export default class CourseSwitch extends React.Component{
             <Switch>
             {/* _Course 是瞎写的，需要各个部分的人改成对应的component */}
             <Route path={"/main/courses/student/introduction"} component={_Course} />
-            <Route path={"/main/courses/student/homework"} component={_Course} />
+            <Route path={"/main/courses/student/homework"} component={StudentHomework} />
             <Route path={"/main/courses/student/test"} component={_Course} />
             <Route path={"/main/courses/student/material"} component={_Course} />
             <Route path={"/main/courses/student/notice"} component={Message} />
