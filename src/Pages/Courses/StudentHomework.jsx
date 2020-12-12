@@ -1,9 +1,14 @@
 import React from "react";
-import {Layout, Card, Collapse, Typography, Button} from "antd";
+import {Layout, Card, Collapse, Typography, Button, Modal, Upload, message, Input, Tooltip} from "antd";
+import { InboxOutlined } from '@ant-design/icons';
+import Markdown from 'react-remarkable';
+import Latex from 'react-latex';
 
 const {Content, Footer, Sider} = Layout;
 const { Panel } = Collapse;
 const { Link } = Typography;
+const { Dragger } = Upload;
+const { TextArea } = Input;
 
 const DHomeworkRequirement = {
     title: "BNF推导",
@@ -12,10 +17,21 @@ const DHomeworkRequirement = {
     start_time: new Date("2020.09.29 19:37"),
     end_time: new Date("2020.10.17 23:55"),
     submit_form: "个人作业",
-    introduction: "Using the following grammar, show whether it is possible to generate a parse tree for the statements given. If so, show its leftmost derivation.\n<assign> -> <id> = <expr>\n<id> -> A | B | C\n<expr> -> <expr> + <term> | <term>\n<term> -> <term> * <factor> | <factor>\n<factor> -> ( <expr> ) | <id>\n\n\nA = A * B + C * A \nA = B + C * (A + B) ",
+    introduction: `Using the following grammar, show whether it is possible to generate a parse tree for the statements given. If so, show its leftmost derivation.
+
+\`\`\`
+<assign> -> <id> = <expr>
+<id> -> A | B | C
+<expr> -> <expr> + <term> | <term>
+<term> -> <term> * <factor> | <factor>
+<factor> -> ( <expr> ) | <id>
+\`\`\`
+    
+    1. A = A * B + C * A 
+    2. A = B + C * (A + B) `,
     is_show_grade: 1,
-    teacher_grading_percentage: 998,
-    peer_grading_percentage: 2
+    teacher_grading_percentage: 990,
+    peer_grading_percentage: 10
 }
 
 const SubmissionList = [
@@ -27,8 +43,7 @@ const SubmissionList = [
         material: 
         {
             name: "ppl-bnf-doc.md",
-            size: 114514,
-            date: new Date("2020.09.30 11:35"),
+            url: "https://ant.design"
         }
     },
     {
@@ -39,8 +54,7 @@ const SubmissionList = [
         material: 
         {
             name: "ppl-bnf-doc2.md",
-            size: 1919810,
-            date: new Date("2020.10.02 07:32")
+            url: "https://www.baidu.com"
         }
     }
 ]
@@ -58,7 +72,7 @@ class HomeworkRequirement extends React.Component {
                     <p>{`评分方式：教师${this.props.teacher_grading_percentage/10}%` + ((this.props.peer_grading_percentage === 0) ? "" : `+互评${this.props.peer_grading_percentage/10}%`)}</p>
                 </Card>
                 <Card title="作业简介">
-                    {this.props.introduction.split("\n").map((v) => {return <p>{v}</p>})}
+                    <Markdown source={this.props.introduction} />
                 </Card>
                 
             </>
@@ -67,8 +81,106 @@ class HomeworkRequirement extends React.Component {
 }
 
 class DoHomeworkButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible: false,
+            confirmLoading : false,
+            draggerConfig: {
+                name: 'file',
+                multiple: false,
+                action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+                onChange(info) {
+                    const { status } = info.file;
+                        if (status !== 'uploading') {
+                    console.log(info.file, info.fileList);
+                    }
+                    if (status === 'done') {
+                        message.success(`${info.file.name} file uploaded successfully.`);
+                    } else if (status === 'error') {
+                        message.error(`${info.file.name} file upload failed.`);
+                    }
+                }
+            }
+        }
+        this.showModal = this.showModal.bind(this);
+        this.handleOk = this.handleOk.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
+    }
     render() {
-        return this.props.enabled ? <Button type="primary" onClick={(e) => {console.log(e)}}>写作业</Button> : <Button type="primary" disabled>写作业（已截止无法提交）</Button>
+        return <>{this.props.enabled 
+        ? <Button type="primary" onClick={this.showModal}>写作业</Button>
+        : <Tooltip placement="top" title="作业已截止，无法提交"><Button type="primary" disabled>写作业</Button></Tooltip>}
+            <Modal 
+                title="提交面板"
+                visible={this.state.visible}
+                onOk={this.handleOk}
+                okText="上传"
+                confirmLoading={this.state.confirmLoading}
+                onCancel={this.handleCancel}
+                cancelText="取消"
+            >
+                <Dragger {...this.state.draggerConfig}>
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">点击或将文件拖入此处以上传</p>
+                    <p className="ant-upload-hint">
+                        当前系统支持单文件上传与批量上传
+                    </p>
+                </Dragger>
+            </Modal>
+        </>
+    }
+    handleOk() {
+        this.setState({confirmLoading: true});
+        setTimeout(() => {this.setState({visible: false, confirmLoading: false})}, 2000);
+    }
+    handleCancel() {
+        this.setState({visible: false});
+    }
+    showModal() {
+        this.setState({visible: true});
+    }
+}
+
+class AppealButton extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible: false,
+            confirmLoading : false
+        }
+        this.showModal = this.showModal.bind(this);
+        this.handleOk = this.handleOk.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
+    }
+    render() {
+        return <>{this.props.enabled 
+        ? <Button type="primary" onClick={this.showModal}>申诉</Button>
+        : <Tooltip placement="top" title="提交未批改或在申诉中"><Button type="primary" disabled>申诉</Button></Tooltip>}
+            <Modal 
+                title="提交面板"
+                visible={this.state.visible}
+                onOk={this.handleOk}
+                okText="上传"
+                confirmLoading={this.state.confirmLoading}
+                onCancel={this.handleCancel}
+                cancelText="取消"
+            >
+                <TextArea rows={4} />
+            </Modal>
+        </>
+    }
+    handleOk() {
+        this.setState({confirmLoading: true});
+        setTimeout(() => {this.setState({visible: false, confirmLoading: false})}, 2000);
+    }
+    handleCancel() {
+        this.setState({visible: false});
+    }
+    showModal() {
+        this.setState({visible: true});
     }
 }
 
@@ -79,9 +191,9 @@ class HomeworkMySubmission extends React.Component {
                 <Collapse>
                     {this.props.SubmissionList.map((Submission) => {
                         return (
-                            <Panel header={Submission.date.toLocaleString()} extra={<Button type="primary" onClick={(e) => {console.log(e)}}>申诉</Button>}>
-                                {Submission.status === 0 ? <p>尚未批改</p> : <><p>{`得分：${Submission.final_score}`}</p><p>{`评语：${Submission.comment}`}</p></>}
-                                <Link href="https://ant.design">{`附件：${Submission.material.name}`}</Link>
+                            <Panel header={Submission.date.toLocaleString()} extra={<AppealButton enabled={Submission.status === 1} />}>
+                                {Submission.status === 0 ? <p>状态：尚未批改</p> : <><p>状态：已批改</p><p>{`得分：${Submission.final_score}`}</p><p>{`评语：${Submission.comment}`}</p></>}
+                                <Link href={Submission.material.url}>{`附件：${Submission.material.name}`}</Link>
                             </Panel>
                         )
                     })}

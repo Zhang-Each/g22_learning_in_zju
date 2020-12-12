@@ -42,12 +42,12 @@ export default class CourseMenuList extends React.Component {
                             </Link>
                         </Menu.Item>
                         <Menu.Item key={"1"}>
-                            <Link to={"/main/courses/student/homework"}>
+                            <Link to={"/main/courses/student/homework_index"}>
                                 作业
                             </Link>
                         </Menu.Item>
                         <Menu.Item key={"2"}>
-                            <Link to={"/main/courses/student/test"}>
+                            <Link to={"/main/courses/student/test_index"}>
                                 测试
                             </Link>
                         </Menu.Item>
@@ -157,12 +157,12 @@ export default class CourseMenuList extends React.Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key={"1"}>
-                        <Link to={"/main/courses/student/homework"}>
+                        <Link to={"/main/courses/student/homework_index"}>
                             作业
                         </Link>
                     </Menu.Item>
                     <Menu.Item key={"2"}>
-                        <Link to={"/main/courses/student/test"}>
+                        <Link to={"/main/courses/student/test_index"}>
                             测试
                         </Link>
                     </Menu.Item>
