@@ -7,18 +7,48 @@ import './PersonInfo.css';
 
 import PwdChange from './PwdChange.jsx';
 import PersonSetting from './PersonSetting.jsx';
-
+import axios from "axios";
 // import {Route, Switch} from "react-router";
 
 const { SubMenu } = Menu;
 const { Header, Content, Footer, Sider } = Layout;
 const { Meta } = Card;
 
+var getCookie = function(name) { 
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+    if(arr=document.cookie.match(reg)) 
+        return unescape(arr[2]); 
+    else return null; 
+} 
 /**
  * 个人信息页面，需要做修改个人信息修改等功能，如果角色是老师可能还需要开课等功能
  */
 export default class PersonInfo extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+        id: null,
+        kind: -1,
+        name: null,
+    }
+
+    var info = {'id':'31801000'};
+    var url = 'http://127.0.0.1:8000/session/?session_id=' + getCookie('session_id')
+    axios.get(url).then(res=>{
+        this.setState({
+                kind: res.data.id===false?-1:res.data.kind,
+                id: res.data.id===false?-1:res.data.id
+        })
+        info.id = res.data.id
+        axios.post('http://127.0.0.1:8000/info/', info).then(res=>{
+            console.log(res.data.info)
+            this.setState({
+                name : res.data.info.name
+            })
+        })
+    })
+}
     render() {
         return (
             <Layout>
@@ -32,8 +62,8 @@ export default class PersonInfo extends React.Component {
                       }
                       >
                       <Meta
-                        title="聂俊哲"
-                        description="学生"
+                        title={this.state.name}
+                        description={this.state.kind===1?"学生":this.state.kind===2?"教师":this.state.kind===3?"助教":"管理员"}
                         />
                     </Card>,
                     <Menu
