@@ -1,9 +1,11 @@
 import React from "react";
-import {Layout, Card, Collapse, Typography, Button} from "antd";
+import {Layout, Card, Collapse, Typography, Button, message, Upload} from "antd";
+import {InboxOutlined} from "@ant-design/icons";
 
 const {Content, Footer, Sider} = Layout;
 const { Panel } = Collapse;
 const { Link } = Typography;
+const { Dragger } = Upload;
 
 const DHomeworkRequirement = {
     title: "BNF推导",
@@ -66,6 +68,41 @@ class HomeworkRequirement extends React.Component {
     }
 }
 
+const Uploadprops = {
+    name: 'file',
+    multiple: true,
+    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+    onChange(info) {
+        const { status } = info.file;
+        if (status !== 'uploading') {
+            console.log(info.file, info.fileList);
+        }
+        if (status === 'done') {
+            message.success(`${info.file.name} file uploaded successfully.`);
+        } else if (status === 'error') {
+            message.error(`${info.file.name} file upload failed.`);
+        }
+    },
+};
+
+class UploadHomework extends React.Component {
+    render() {
+        return (
+            <Card title="提交作业">
+                <Dragger {...Uploadprops}>
+                    <p className="ant-upload-drag-icon">
+                        <InboxOutlined />
+                    </p>
+                    <p className="ant-upload-text">点击此处或拖动文件以上传</p>
+                    <p className="ant-upload-hint">
+                        支持单次或批量上传
+                    </p>
+                </Dragger>
+            </Card>
+        );
+    }
+}
+
 class DoHomeworkButton extends React.Component {
     render() {
         return this.props.enabled ? <Button type="primary" onClick={(e) => {console.log(e)}}>写作业</Button> : <Button type="primary" disabled>写作业（已截止无法提交）</Button>
@@ -106,6 +143,7 @@ export default class StudentHomework extends React.Component {
             * */
             <Layout style={{height: '100vh'}}>
                 <HomeworkRequirement {...this.state.DHomeworkRequirement} />
+                <UploadHomework/>
                 <HomeworkMySubmission end_time={this.state.DHomeworkRequirement.end_time} SubmissionList={this.state.SubmissionList}/>
             </Layout>
         );
