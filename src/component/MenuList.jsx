@@ -29,6 +29,42 @@ export default class MenuList extends React.Component {
     }
 
     render() {
+        return (
+            <Header className="header">
+                    <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['0']}>
+                        <Menu.Item key={'0'}>
+                            <Link to={"/main"}>
+                                首页
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key={'1'}>
+                            <Link to={"/main/information"}>
+                                个人信息
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key={"2"}>
+                            <Link to={"/main/message"}>
+                                消息通知
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key={"3"}>
+                            <Link to={"/main/openclass"}>
+                                公开课程
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key={"4"}>
+                            <Link to={"/main/courses/student"}>
+                                我的课程
+                            </Link>
+                        </Menu.Item>
+                        <Menu.Item key={"5"}>
+                            <Link to={"/main/help"}>
+                                帮助
+                            </Link>
+                        </Menu.Item>
+                    </Menu>
+                </Header>
+        )
         if(this.state.kind === -1){
             return (
                 /* 一级导航栏和其对应的路由，从主页面跳转到一级子页面 */

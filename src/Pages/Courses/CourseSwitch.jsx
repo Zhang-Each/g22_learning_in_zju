@@ -7,6 +7,7 @@ import StudentHomework from "./StudentHomework";
 import StudentTestIndex from "./StudentTestIndex";
 import StudentTest from "./StudentTest";
 import Message from "../Message/Message";
+import StudentTestDetail from "./StudentTestDetail";
 export default class CourseSwitch extends React.Component{
     render(){
         return(
@@ -17,6 +18,7 @@ export default class CourseSwitch extends React.Component{
                 <Route path={"/main/courses/student/homework"} component={StudentHomework} />
                 <Route path={"/main/courses/student/test_index"} component={StudentTestIndex} />
                 <Route path={"/main/courses/student/test"} component={StudentTest} />
+                <Route path={"/main/courses/student/test_detail"} component={StudentTestDetail} />
                 <Route path={"/main/courses/student/material"} component={_Course} />
                 <Route path={"/main/courses/student/notice"} component={Message} />
                 <Route path={"/main/courses/student/discussion"} component={_Course} />

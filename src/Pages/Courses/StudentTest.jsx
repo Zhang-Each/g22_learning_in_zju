@@ -1,12 +1,10 @@
 import React from "react";
 import {Layout, Card, Collapse, Typography, Button, Modal, Upload, message, Input, Tooltip, Table} from "antd";
-import { InboxOutlined } from '@ant-design/icons';
+import {Link} from "react-router-dom";
 import Markdown from 'react-remarkable';
-import Latex from 'react-latex';
 
 const {Content, Footer, Sider} = Layout;
 const { Panel } = Collapse;
-const { Link } = Typography;
 const { Dragger } = Upload;
 const { TextArea } = Input;
 
@@ -17,7 +15,7 @@ const DTestRequirement = {
     start_time: new Date("2020.09.29 19:37"),
     end_time: new Date("2020.10.17 23:55"),
     submit_form: "个人测试",
-    introduction: `本测试由10道选择及3道填空构成`,
+    introduction: `本测试由4道选择构成`,
     is_show_grade: 1,
     teacher_grading_percentage: 990,
     peer_grading_percentage: 10
@@ -84,7 +82,7 @@ class TestMySubmission extends React.Component {
                   title: '查看详情',
                   dataIndex: 'more',
                   key: 'more',
-                  render: (v) => <Link href="https://ant.design">查看详情</Link>
+                  render: (v) => <Link to="/main/courses/student/test_detail">查看详情</Link>
                 },
               ]
         }
@@ -108,9 +106,6 @@ export default class StudentTest extends React.Component {
     }
     render() {
         return (
-            /* 我个人认为课程的二级导航栏应该需要先获取当前用户所有的课程信息，然后映射成为二级导航栏，
-            *  每个导航栏可以进入一门课程这样子，不知道诸位能不能实现我说的这个功能
-            * */
             <Layout style={{height: '100vh'}}>
                 <TestRequirement {...this.state.DTestRequirement} />
                 <TestMySubmission end_time={this.state.DTestRequirement.end_time} SubmissionList={this.state.SubmissionList}/>
