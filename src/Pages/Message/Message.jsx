@@ -8,82 +8,82 @@ const MessageListTest = [
     {
         "text": "计算机系统原理",
         "date": new Date("2020.12.26 20:07"),
-        "comment": "wdnmd"
+        "comment": "大家不要忘了期末考试"
     },
     {
         "text": "计算机系统原理",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "计算机系统原理被评为软工优秀课程"
     },
     {
         "text": "计算机系统原理",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "计算机系统原理作业1发布"
     },
     {
-        "text": "nmsl2",
+        "text": "软件工程管理",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "不要忘了本周上机课"
     },
     {
-        "text": "nmsl2",
+        "text": "软件工程管理",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "个人作业1.1和1.2提交即将截止"
     },
     {
-        "text": "nmsl2",
+        "text": "操作系统",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "下节课研究国产操作系统未来发展趋势"
     },
     {
-        "text": "nmsl2",
+        "text": "计算机网络",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "下节课讲网络层相关内容并QUIZ"
     },
     {
-        "text": "nmsl2",
+        "text": "软件需求工程",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "UML个人作业截止日期12.25"
     },
     {
-        "text": "nmsl2",
+        "text": "软件质量保证与测试",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "本课程老师是个光头"
     },
     {
-        "text": "nmsl2",
+        "text": "软件质量保证与测试",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "小组作业要做爬虫！"
     },
     {
-        "text": "nmsl2",
+        "text": "软件质量保证与测试",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "期末考之前会划重点"
     },
     {
-        "text": "nmsl2",
+        "text": "软件工程管理",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "上课不来点名一次扣五分"
     },
     {
-        "text": "nmsl2",
+        "text": "Java应用技术",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "本学期所有作业已经布置完毕，请大家按时提交"
     },
     {
-        "text": "nmsl2",
+        "text": "毛概",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "本周外出教学"
     },
     {
-        "text": "nmsl2",
+        "text": "软件需求工程",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "wdnmd2"
+        "comment": "需求规格说明书提交即将截止"
     },
     {
-        "text": "nmsl233",
+        "text": "软件需求工程",
         "date": new Date("2020.11.26 20:07"),
-        "comment": "nmslaaa"
+        "comment": "第二次需求访谈"
     },
 ]
 
