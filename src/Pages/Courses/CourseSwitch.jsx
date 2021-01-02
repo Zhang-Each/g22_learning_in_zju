@@ -17,6 +17,7 @@ import TestCorrect from "./teacher/correctTest1";
 import TestCorrect2 from "./teacher/correctTest2";
 import TestEdit from "./teacher/EditTest";
 import QuestionPool from "./teacher/EditDataBase"
+import MessageBoard from "./MessageBoard/MessageBoard";
 export default class CourseSwitch extends React.Component{
     render(){
         return(
@@ -30,7 +31,7 @@ export default class CourseSwitch extends React.Component{
                 <Route path={"/main/courses/student/test_detail"} component={StudentTestDetail} />
                 <Route path={"/main/courses/student/material"} component={_Course} />
                 <Route path={"/main/courses/student/notice"} component={Message} />
-                <Route path={"/main/courses/student/discussion"} component={_Course} />
+                <Route path={"/main/courses/student/discussion"} component={MessageBoard} />
 
                 <Route path={"/main/courses/teacher/introduction"} component={_Course} />
                 <Route path={"/main/courses/teacher/homework/correct_detail"} component={HomeworkCorrect2} />
@@ -44,14 +45,14 @@ export default class CourseSwitch extends React.Component{
                 <Route path={"/main/courses/teacher/test"} component={TeaTest} />
                 <Route path={"/main/courses/teacher/material"} component={_Course} />
                 <Route path={"/main/courses/teacher/notice"} component={_Course} />
-                <Route path={"/main/courses/teacher/discussion"} component={_Course} /> 
+                <Route path={"/main/courses/teacher/discussion"} component={MessageBoard} />
                             
                 <Route path={"/main/courses/assistant/introduction"} component={_Course} />
                 <Route path={"/main/courses/assistant/homework"} component={_Course} />
                 <Route path={"/main/courses/assistant/test"} component={_Course} />
                 <Route path={"/main/courses/assistant/material"} component={_Course} />
                 <Route path={"/main/courses/assistant/notice"} component={_Course} />
-                <Route path={"/main/courses/assistant/discussion"} component={_Course} />         
+                <Route path={"/main/courses/assistant/discussion"} component={MessageBoard} />
             </Switch>
         );
         
