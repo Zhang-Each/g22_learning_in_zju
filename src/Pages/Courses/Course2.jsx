@@ -3,6 +3,8 @@ import {Card, Layout, Menu, message, Upload} from "antd";
 import {Route, Switch} from "react-router";
 import CourseMenuList from "./CourseMenuList";
 import {UserOutlined, LaptopOutlined, InboxOutlined} from '@ant-design/icons';
+
+import downloadImg from "./images/download.png";
 const {Content, Footer, Sider} = Layout;
 const {SubMenu} = Menu;
 const {Dragger} = Upload;
@@ -31,11 +33,16 @@ const Uploadprops = {
         },
         {
             uid: '2',
-            name: 'fkall.png',
+            name: 'zyc.pdf',
             status: 'done',
-            url: 'http://www.news.zju.edu.cn/_upload/article/images/62/97/8613225d4b7893d6d7aa8b8cf3f3/706276a0-4331-494a-846f-6fe131fa11f1.jpg',
+            url: 'http://file.cc98.org/v2-upload/gr0al454.pdf',
         },
     ],
+    showUploadList: {
+        showPreviewIcon: true,
+        showDownloadIcon: true,
+        showRemoveIcon: true
+    },
 };
 
 class UploadFile extends React.Component {

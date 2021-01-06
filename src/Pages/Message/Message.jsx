@@ -167,7 +167,7 @@ export default class Message extends React.Component {
     render() {
         return (
             <Layout>
-                <Content lassName="site-layout-background" style={{padding: 24, margin: 0, minHeight: 300,}}>
+                <Content className="site-layout-background" style={{padding: 24, margin: 0, minHeight: 300,}}>
                     <MessageFilter onChangeDate={this.handleChangeDate} onChangeDateType={this.handleChangeDateType} onSearch={this.handleSearchName}/>
                     <MessageList items={this.state.FilteredMessageList.slice((this.state.page-1)*10, this.state.page*10)} />
                     <Pagination onChange={(page) => {this.setState({page: page})}} total={this.state.FilteredMessageList.length} />
