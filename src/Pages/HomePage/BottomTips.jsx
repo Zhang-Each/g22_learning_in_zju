@@ -13,18 +13,18 @@ export default class Tips extends React.Component {
                 </div>
                 <div class="fBlock2">
                     <h4 class="aboutUs">关注我们</h4>
-                    <img class="img1" src={img1} />
-                    <img class="img2" src={img2} />
+                    <img class="img1" src={img1} alt=""/>
+                    <img class="img2" src={img2} alt=""/>
                 </div>
                 <div class="fBlock3">
                     <h4 class="aboutUs">友情链接</h4>
                     <div class="friendLink">
-                        <a href="http://course.zju.edu.cn" target="_blank">学在浙大</a>
-                        <a href="http://cc98.org" target="_blank">cc98论坛</a>
-                        <a href="http://www.cs.zju.edu.cn" target="_blank">浙江大学计算机学院</a>
-                        <a href="http://person.zju.edu.cn" target="_blank">浙江大学教师主页</a>
-                        <a href="http://jwbinfosys.zju.edu.cn" target="_blank">浙江大学教务管理系统</a>
-                        <a href="http://zdbk.zju.edu.cn" target="_blank">浙江大学教学管理信息服务平台</a>
+                        <a href="http://course.zju.edu.cn" target="_blank" rel="noreferrer">学在浙大</a>
+                        <a href="http://cc98.org" target="_blank" rel="noreferrer">cc98论坛</a>
+                        <a href="http://www.cs.zju.edu.cn" target="_blank" rel="noreferrer">浙江大学计算机学院</a>
+                        <a href="http://person.zju.edu.cn" target="_blank" rel="noreferrer">浙江大学教师主页</a>
+                        <a href="http://jwbinfosys.zju.edu.cn" target="_blank" rel="noreferrer">浙江大学教务管理系统</a>
+                        <a href="http://zdbk.zju.edu.cn" target="_blank" rel="noreferrer">浙江大学教学管理信息服务平台</a>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ import OpenClass from "../Pages/OpenClass/OpenClass";
 import HelpPage from "../Pages/HelpPage/HelpPage";
 
 const { SubMenu } = Menu;
-const { Content, Sider, Footer} = Layout;
+const { Content, Sider} = Layout;
 
 class Navigator extends React.Component {
     constructor(props) {
@@ -27,25 +27,21 @@ class Navigator extends React.Component {
     }
     render() {
         return (
-            <Layout>
-                <Layout>
-                    {/*网站的大标题 此处把用户名和类型传递给HeadTitle组件*/}
-                    <HeadTitle/>
-                </Layout>
-
-                {/*一级导航菜单 */}
+            <Layout style={{height: "100vh"}}>
                 <MenuList/>
-                {/*子页面的路由*/}
-                <Switch>
-                    <Route exact path={"/main"} component={HomePage} />
-                    <Route path={"/main/information"} component={PersonInfo} />
-                    <Route path={"/main/courses/student"} component={Course} />
-                    <Route path={"/main/courses/teacher"} component={Course} />
-                    <Route path={"/main/courses/assistant"} component={Course} />
-                    <Route path={"/main/message"} component={Message} />
-                    <Route path={"/main/openclass"} component={OpenClass} />
-                    <Route path={"/main/help"} component={HelpPage} />
-                </Switch>
+                <Content style={{overflow: "auto"}}>
+                    <Switch>
+                        <Route exact path={"/main"} component={HomePage} />
+                        <Route path={"/main/information"} component={PersonInfo} />
+                        <Route path={"/main/courses/student"} component={Course} />
+                        <Route path={"/main/courses/teacher"} component={Course} />
+                        <Route path={"/main/courses/assistant"} component={Course} />
+                        <Route path={"/main/message"} component={Message} />
+                        <Route path={"/main/openclass"} component={OpenClass} />
+                        <Route path={"/main/help"} component={HelpPage} />
+                    </Switch>
+                </Content>
+                {/* <Footer /> */}
             </Layout>
         );
     }

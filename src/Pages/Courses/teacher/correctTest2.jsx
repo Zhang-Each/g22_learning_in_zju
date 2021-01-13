@@ -37,7 +37,7 @@ class ReadPaper extends React.Component{
               <div className="clearfix">
                 <span className="f-r">得分：<InputNumber min={0} size="small" style={{width:100}} onChange={this.scoreChange.bind(this,i)} defaultValue={item.get}/></span>
               </div>
-              {i == scoreInfom[id].ans.length-1 ? "" : <Divider dashed="true"/>}
+              {i === scoreInfom[id].ans.length-1 ? "" : <Divider dashed="true"/>}
             </div>
           )
         })

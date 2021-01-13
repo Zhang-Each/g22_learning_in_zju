@@ -18,6 +18,9 @@ import TestCorrect2 from "./teacher/correctTest2";
 import TestEdit from "./teacher/EditTest";
 import QuestionPool from "./teacher/EditDataBase"
 import MessageBoard from "./MessageBoard/MessageBoard";
+import EditNotice from "./teacher/EditNotice";
+import TeaNoticeList from "./teacher/NoticeList";
+
 export default class CourseSwitch extends React.Component{
     render(){
         return(
@@ -44,7 +47,8 @@ export default class CourseSwitch extends React.Component{
                 <Route path={"/main/courses/teacher/test/correct"} component={TestCorrect} />
                 <Route path={"/main/courses/teacher/test"} component={TeaTest} />
                 <Route path={"/main/courses/teacher/material"} component={_Course} />
-                <Route path={"/main/courses/teacher/notice"} component={_Course} />
+                <Route path={"/main/courses/teacher/notice/edit"} component={EditNotice} />
+                <Route path={"/main/courses/teacher/notice"} component={TeaNoticeList} />
                 <Route path={"/main/courses/teacher/discussion"} component={MessageBoard} />
                             
                 <Route path={"/main/courses/assistant/introduction"} component={_Course} />

@@ -187,7 +187,6 @@ export default class Message extends React.Component {
     updateFilteredMessageList() {
         this.setState((state) => {
             var FilteredMessageList = state.TotalMessageList.filter(v => {return v.text.indexOf(state.name) !== -1});
-            FilteredMessageList = FilteredMessageList;
             while(1) {
                 if(state.date === null) break;
                 FilteredMessageList = FilteredMessageList.filter(v => {return v.date.getFullYear() === state.date._d.getFullYear();});

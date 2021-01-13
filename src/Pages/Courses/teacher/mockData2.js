@@ -29,7 +29,6 @@ const mockData2 = [{
     sdate2: "2020.12.30 19:30",
     time: '7200',
     stage: '已结束',
-    stage: '未开始',
     yaoqiu: '要求用python实现',
     zhanbi: 20,
     form: '个人作业',
