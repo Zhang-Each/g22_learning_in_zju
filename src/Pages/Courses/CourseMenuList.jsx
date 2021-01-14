@@ -2,7 +2,9 @@ import React from "react";
 import {Layout, Menu} from "antd";
 import {Link} from "react-router-dom";
 import axios from "axios";
-const { Header} = Layout;
+const { Sider } = Layout;
+const { SubMenu } = Menu;
+
 var getCookie = function(name) { 
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
     if(arr=document.cookie.match(reg)) 
@@ -14,7 +16,9 @@ export default class CourseMenuList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            kind: -1
+            identity: "student",
+            course_list: ["程序设计方法学", "计算机系统原理", "操作系统", "汇编语言程序设计基础与计算机处理器历史", "软件保护技术", "数值分析", "数值计算", "科学计算", "数值分析方法深化", "高级数值分析方法"],
+            openKeys: []
         }
     }
 
@@ -30,159 +34,43 @@ export default class CourseMenuList extends React.Component {
     }
 
     render() {
-        
-        if(this.state.kind === 1){//学生
-            return (
-                /* 一级导航栏和其对应的路由，从主页面跳转到一级子页面 */
-                <Header className="header">
-                    <Menu theme="light" mode="horizontal" defaultSelectedKeys={['0']}>
-                        <Menu.Item key={'0'}>
-                            <Link to={"/main/courses/student/introduction"}>
-                                课程简介
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"1"}>
-                            <Link to={"/main/courses/student/homework_index"}>
-                                作业
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"2"}>
-                            <Link to={"/main/courses/student/test_index"}>
-                                测试
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"3"}>
-                            <Link to={"/main/courses/student/material"}>
-                                课件
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"4"}>
-                            <Link to={"/main/courses/student/notice"}>
-                                通知
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"5"}>
-                            <Link to={"/main/courses/student/discussion"}>
-                                讨论
-                            </Link>
-                        </Menu.Item>
-                    </Menu>
-                </Header>
-            );
-        }
-        else if(this.state.kind===2){   //教师
-            return (
-                /* 一级导航栏和其对应的路由，从主页面跳转到一级子页面 */
-                <Header className="header">
-                    <Menu theme="light" mode="horizontal" defaultSelectedKeys={['0']}>
-                    <Menu.Item key={'0'}>
-                            <Link to={"/main/courses/teacher/introduction"}>
-                                课程简介
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"1"}>
-                            <Link to={"/main/courses/teacher/homework"}>
-                                作业
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"2"}>
-                            <Link to={"/main/courses/teacher/test"}>
-                                测试
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"3"}>
-                            <Link to={"/main/courses/teacher/material"}>
-                                课件
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"4"}>
-                            <Link to={"/main/courses/teacher/notice"}>
-                                通知
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"5"}>
-                            <Link to={"/main/courses/teacher/discussion"}>
-                                讨论
-                            </Link>
-                        </Menu.Item>
-                    </Menu>
-                </Header>
-            );
-        }else if(this.state.kind===3){//助教
-            return (
-                /* 一级导航栏和其对应的路由，从主页面跳转到一级子页面 */
-                <Header className="header">
-                    <Menu theme="light" mode="horizontal" defaultSelectedKeys={['0']}>
-                    <Menu.Item key={'0'}>
-                            <Link to={"/main/courses/assistant/introduction"}>
-                                课程简介
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"1"}>
-                            <Link to={"/main/courses/assistant/homework"}>
-                                作业
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"2"}>
-                            <Link to={"/main/courses/assistant/test"}>
-                                测试
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"3"}>
-                            <Link to={"/main/courses/assistant/material"}>
-                                课件
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"4"}>
-                            <Link to={"/main/courses/assistant/notice"}>
-                                通知
-                            </Link>
-                        </Menu.Item>
-                        <Menu.Item key={"5"}>
-                            <Link to={"/main/courses/assistant/discussion"}>
-                                讨论
-                            </Link>
-                        </Menu.Item>
-                    </Menu>
-                </Header>
-            );  
-        }    
         return (
-            /* 一级导航栏和其对应的路由，从主页面跳转到一级子页面 */
-            <Header className="header">
-                <Menu theme="light" mode="horizontal" defaultSelectedKeys={['0']}>
-                    <Menu.Item key={'0'}>
-                        <Link to={"/main/courses/introduction"}>
-                            课程简介
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key={"1"}>
-                        <Link to={"/main/courses/student/homework_index"}>
-                            作业
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key={"2"}>
-                        <Link to={"/main/courses/student/test_index"}>
-                            测试
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key={"3"}>
-                        <Link to={"/main/courses/student/material"}>
-                            课件
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key={"4"}>
-                        <Link to={"/main/courses/student/notice"}>
-                            通知
-                        </Link>
-                    </Menu.Item>
-                    <Menu.Item key={"5"}>
-                        <Link to={"/main/courses/student/discussion"}>
-                            讨论
-                        </Link>
-                    </Menu.Item>
+            <Sider>
+                <Menu
+                    mode="inline"
+                    theme="dark"
+                    openKeys={this.state.openKeys}
+                    onOpenChange={(openKeys) => this.setState({
+                        openKeys: openKeys.slice(openKeys.length-1)
+                    })}
+                >
+                {this.state.course_list.map((course_name) => {
+                    const identity = this.state.kind ===1? "student":"teacher";
+                    return (
+                        <SubMenu key={course_name} title={course_name}>
+                            <Menu.Item key={`${course_name}-intro`}>
+                                <Link to={`/main/courses/${identity}/introduction`}>课程简介</Link>
+                            </Menu.Item>
+                            <Menu.Item key={`${course_name}-homework_index`}>
+                                <Link to={`/main/courses/${identity}/homework`}>作业</Link>
+                            </Menu.Item>
+                            <Menu.Item key={`${course_name}-test_index`}>
+                                <Link to={`/main/courses/${identity}/test`}>测试</Link>
+                            </Menu.Item>
+                            <Menu.Item key={`${course_name}-material`}>
+                                <Link to={`/main/courses/${identity}/material`}>课件</Link>
+                            </Menu.Item>
+                            <Menu.Item key={`${course_name}-notice`}>
+                                <Link to={`/main/courses/${identity}/notice`}>通知</Link>
+                            </Menu.Item>
+                            <Menu.Item key={`${course_name}-discussion`}>
+                                <Link to={`/main/courses/${identity}/discussion`}>讨论区</Link>
+                            </Menu.Item>
+                        </SubMenu>
+                    );
+                })}
                 </Menu>
-            </Header>
-        );                                
+            </Sider>
+        );
     }
 }

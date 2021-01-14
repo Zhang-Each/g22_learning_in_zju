@@ -20,11 +20,11 @@ export default class Tips extends React.Component {
             <h3>名师风采 <span>| </span><a href="">更多</a></h3>     
             <ul class="clearfix">
               <li>
-                <a href="https://person.zju.edu.cn/0088262" target="_blank">
+                <a href="https://person.zju.edu.cn/0088262" target="_blank" rel="noreferrer">
                 <div class="carouselItem" >
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img1} />
+                      <img src={img1} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">何钦铭</h4>
@@ -35,11 +35,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/hzlou" target="_blank">
+                <a href="https://person.zju.edu.cn/hzlou" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img2} />
+                      <img src={img2} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">楼学庆</h4>
@@ -50,11 +50,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/0092031" target="_blank">
+                <a href="https://person.zju.edu.cn/0092031" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img3} />
+                      <img src={img3} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">邢卫</h4>
@@ -65,11 +65,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/0097412" target="_blank">
+                <a href="https://person.zju.edu.cn/0097412" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img4} />
+                      <img src={img4} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">金波</h4>
@@ -80,11 +80,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/wengkai" target="_blank">
+                <a href="https://person.zju.edu.cn/wengkai" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img5} />
+                      <img src={img5} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">翁恺</h4>
@@ -95,11 +95,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/0088063" target="_blank">
+                <a href="https://person.zju.edu.cn/0088063" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img6} />
+                      <img src={img6} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">苏德矿</h4>
@@ -110,11 +110,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/lish" target="_blank">
+                <a href="https://person.zju.edu.cn/lish" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img7} />
+                      <img src={img7} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">李胜宏</h4>
@@ -125,11 +125,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/bfshi" target="_blank">
+                <a href="https://person.zju.edu.cn/bfshi" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img8} />
+                      <img src={img8} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">史炳锋</h4>
@@ -140,11 +140,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/chhzhao" target="_blank">
+                <a href="https://person.zju.edu.cn/chhzhao" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img9} />
+                      <img src={img9} alt=""/>
                     </div>
                   </div>
                   <h4 class="teaName">赵春晖</h4>
@@ -155,11 +155,11 @@ export default class Tips extends React.Component {
               </li>
 
               <li>
-                <a href="https://person.zju.edu.cn/zhaoyangzhang" target="_blank">
+                <a href="https://person.zju.edu.cn/zhaoyangzhang" target="_blank" rel="noreferrer">
                 <div class="carouselItem">
                   <div class="img">
                     <div class="img_wrap">
-                      <img src={img10} />
+                      <img src={img10}alt="" />
                     </div>
                   </div>
                   <h4 class="teaName">张朝阳</h4>

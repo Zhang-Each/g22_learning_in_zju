@@ -13,7 +13,7 @@ const DTestRequirementList = [
     {
         title: "BNF推导2",
         start_time: new Date("2020.09.29 19:37"),
-        end_time: new Date("2020.12.25 23:55"),
+        end_time: new Date("2021.01.25 23:55"),
         submit_form: "个人测试",
         submit_times: 0,
     }

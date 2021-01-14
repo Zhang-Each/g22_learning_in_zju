@@ -3,14 +3,9 @@ import {Layout, Menu, Divider, Button, Avatar} from "antd";
 import AvatarUpload from './AvatarUpload';
 import './PersonInfo.css';
 import axios from "axios";
+import getCookie from "../../util";
 
 const {Content} = Layout;
-var getCookie = function(name) { 
-    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-    if(arr=document.cookie.match(reg)) 
-        return unescape(arr[2]); 
-    else return null; 
-} 
 
 /**
  * 消息通知页面，预期做出消息的展示、过滤等功能

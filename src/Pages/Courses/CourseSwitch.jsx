@@ -18,16 +18,19 @@ import TestCorrect2 from "./teacher/correctTest2";
 import TestEdit from "./teacher/EditTest";
 import QuestionPool from "./teacher/EditDataBase"
 import MessageBoard from "./MessageBoard/MessageBoard";
+import EditNotice from "./teacher/EditNotice";
+import TeaNoticeList from "./teacher/NoticeList";
+
 export default class CourseSwitch extends React.Component{
     render(){
         return(
             <Switch>
                 {/* _Course 是瞎写的，需要各个部分的人改成对应的component */}
                 <Route path={"/main/courses/student/introduction"} component={_Course} />
-                <Route path={"/main/courses/student/homework_index"} component={StudentHomeworkIndex} />
-                <Route path={"/main/courses/student/homework"} component={StudentHomework} />
-                <Route path={"/main/courses/student/test_index"} component={StudentTestIndex} />
-                <Route path={"/main/courses/student/test"} component={StudentTest} />
+                <Route path={"/main/courses/student/homework_index"} component={StudentHomework} />
+                <Route path={"/main/courses/student/homework"} component={StudentHomeworkIndex} />
+                <Route path={"/main/courses/student/test_index"} component={StudentTest} />
+                <Route path={"/main/courses/student/test"} component={StudentTestIndex} />
                 <Route path={"/main/courses/student/test_detail"} component={StudentTestDetail} />
                 <Route path={"/main/courses/student/material"} component={_Course} />
                 <Route path={"/main/courses/student/notice"} component={Message} />
@@ -44,7 +47,8 @@ export default class CourseSwitch extends React.Component{
                 <Route path={"/main/courses/teacher/test/correct"} component={TestCorrect} />
                 <Route path={"/main/courses/teacher/test"} component={TeaTest} />
                 <Route path={"/main/courses/teacher/material"} component={_Course} />
-                <Route path={"/main/courses/teacher/notice"} component={_Course} />
+                <Route path={"/main/courses/teacher/notice/edit"} component={EditNotice} />
+                <Route path={"/main/courses/teacher/notice"} component={TeaNoticeList} />
                 <Route path={"/main/courses/teacher/discussion"} component={MessageBoard} />
                             
                 <Route path={"/main/courses/assistant/introduction"} component={_Course} />

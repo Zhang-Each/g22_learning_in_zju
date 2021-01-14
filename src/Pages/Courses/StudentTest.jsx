@@ -11,9 +11,9 @@ const { TextArea } = Input;
 const DTestRequirement = {
     title: "测试8——存储和文件系统",
     grade_proportion: 0.020,
-    show_grade_time: new Date("2020.10.17 23:55"),
+    show_grade_time: new Date("2021.01.17 23:55"),
     start_time: new Date("2020.09.29 19:37"),
-    end_time: new Date("2020.10.17 23:55"),
+    end_time: new Date("2021.01.17 23:55"),
     submit_form: "个人测试",
     introduction: `本测试由4道选择构成`,
     is_show_grade: 1,
@@ -37,8 +37,8 @@ const SubmissionList = [
 class DoTestButton extends React.Component {
     render() {
         return <>{this.props.enabled 
-        ? <Button type="primary" onClick={this.showModal}>写作业</Button>
-        : <Tooltip placement="top" title="测试已截止，无法提交"><Button type="primary" disabled>写测试</Button></Tooltip>}</>
+        ? <Button type="primary" ><Link to="/main/courses/student/test_detail">写作业</Link></Button>
+        : <Button type="primary" onClick={this.showModal}>写作业</Button>}</>
     }
 }
 
